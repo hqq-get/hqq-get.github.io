@@ -112,7 +112,7 @@ theme: matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
-  repository: git@github.com:hqq-get/hqq-get.github.io.git
+  repository: https://github.com/hqq-get/hqq-get.github.io.git
   branch: master
 # - type: coding
 #   repository: https://git.coding.net/godweiyang/godweiyang.github.io.git
