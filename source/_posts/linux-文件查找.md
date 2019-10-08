@@ -7,7 +7,7 @@ mathjax: true
 date: 2019-10-08 19:54:42
 password:
 summary:
-tags:
+tags: Linux
 categories:
 ---
 ### locate find

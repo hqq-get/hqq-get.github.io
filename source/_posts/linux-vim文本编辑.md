@@ -7,7 +7,7 @@ mathjax: true
 date: 2019-10-08 19:57:24
 password:
 summary:
-tags:
+tags: Linux
 categories:
 ---
 ### vim编辑器
