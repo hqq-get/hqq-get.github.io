@@ -5,15 +5,15 @@
 # Site
 title: 贺强强
 subtitle: 贺强强
-description: 华东师范大学 | 计算机科学与技术 | 自然语言处理
-keywords: "ECNU NLP DeepLearning AntNLP 韦阳 godweiyang WeiYang 自然语言处理 深度学习"
+description: 郑州大学
+keywords: "Linux CI/CD K8s Python "
 author: 贺强强
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://godweiyang.com
+url: https://hqq-get.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

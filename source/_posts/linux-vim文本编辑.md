@@ -1,16 +1,15 @@
 ---
-title: vim文本编辑
+title: linux-vim文本编辑
 top: false
 cover: false
 toc: true
 mathjax: true
-date: 2019-09-27 17:33:14
+date: 2019-10-08 19:57:24
 password:
 summary:
-tags: Linux
+tags:
 categories:
 ---
-
 ### vim编辑器
 ---
 ##### 文本编辑器：
