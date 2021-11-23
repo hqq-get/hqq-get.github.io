@@ -10,7 +10,7 @@
   
   <title>
     
-      Blacksmith
+      About | Blacksmith
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -122,7 +122,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -179,33 +179,45 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="about-banner" style="background-image: url()"></div>
+<div class="author">
+  <div class="head">
+    <img src="https://avatars.githubusercontent.com/u/55874667?v=4" />
+  </div>
+  <h3>Blacksmith</h3>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2021/11/23/first/">Golang闭包</a>
-      </h2>
-      <p class="article-date">November 23, 2021</p>
-      
-        
-  <a href="/tags#golang" >
-    <span class="tag-code">golang</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          概念闭包是在上下文中引用了自由变量的函数，或者说是函数和其引用的环境的组合体
-实例123456789101112package mainfunc test(x int) func() &#123;	return func() &#123;		println(x)	&#125;&#125;fu ...
-        
-      </div>
-      <a class="more" href="/2021/11/23/first/">Read more</a>
-    </article>
+    <p class="description">The end is always near.</p>
   
+  <section class="share-icons">
+    
+    
+    
+      <a class="icon-github" href="https://github.com/hqq-get" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    
+    
+    
+    
+  </section>
+</div>
 
-  
-</main>
-
+<script>
+  (function () {
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
+  })();
+</script>
 
     <div class="scroll-top">
   <span class="arrow-icon"></span>

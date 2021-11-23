@@ -10,7 +10,7 @@
   
   <title>
     
-      Blacksmith
+      Project | Blacksmith
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -122,7 +122,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -179,34 +179,56 @@
   </div>
 </header>
 
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2021/11/23/first/">Golang闭包</a>
-      </h2>
-      <p class="article-date">November 23, 2021</p>
-      
-        
-  <a href="/tags#golang" >
-    <span class="tag-code">golang</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          概念闭包是在上下文中引用了自由变量的函数，或者说是函数和其引用的环境的组合体
-实例123456789101112package mainfunc test(x int) func() &#123;	return func() &#123;		println(x)	&#125;&#125;fu ...
-        
-      </div>
-      <a class="more" href="/2021/11/23/first/">Read more</a>
-    </article>
-  
-
-  
+    <div id="article-banner">
+  <h2>Projects</h2>
+  <p class="post-date">GitHub Open Source Projects</p>
+</div>
+<main class="app-body project-app">
+  <div class="card-container" id="all-project"></div>
 </main>
-
-
+<script>
+  (function() {
+    var url = 'http://example.com/project/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header')
+    $.ajax({
+      headers: {
+        Accept: 'application/vnd.github.v3.raw'
+      },
+      type: 'get',
+      url: 'https://api.github.com/users/hqq-get/repos',
+      success: function (data) {
+        var repos = data.sort(function(a, b) {
+          return (b.stargazers_count - a.stargazers_count)
+        }).slice(0, 6)
+        var cardHtml = repos.map(function(item) {
+          var description = item.description || ""
+          if (description.replace(/[\u0391-\uFFE5]/g, "aa").length > 72) {
+            description = description.slice(0, 72) + '...'
+          }
+          return (
+            '<section class="project-card">' + 
+              '<a class="card-wrap" href="'+ item.html_url +'" target="_blank">' +
+                '<div class="card-header" data-name="'+ item.name +'"></div>' +
+                '<h3 class="card-title">' + item.name + '</h3>' +
+                '<p class="card-description">' + description + '</p>' +
+                '<div class="card-footer">' +
+                  '<span><i class="fa fa-star"></i>'+ item.stargazers_count +'</span>' +
+                  '<span><i class="fa fa-code-fork"></i>' + item.forks_count +'</span>' +
+                '</div>' +
+              '</a>' +
+            '</section>'
+          )
+        }).join('')
+        $('#all-project').html(cardHtml)
+        $('.card-header').each(function() {
+          var name = $(this).data('name');
+          $(this).geopattern(name);
+        })
+      }
+    });
+  })()
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

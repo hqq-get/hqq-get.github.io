@@ -76,7 +76,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -122,7 +122,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -179,34 +179,38 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">Archives</p>
+</div>
+<main class="app-body" id="archives">
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2021/11/23/first/">Golang闭包</a>
-      </h2>
-      <p class="article-date">November 23, 2021</p>
-      
-        
-  <a href="/tags#golang" >
-    <span class="tag-code">golang</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          概念闭包是在上下文中引用了自由变量的函数，或者说是函数和其引用的环境的组合体
-实例123456789101112package mainfunc test(x int) func() &#123;	return func() &#123;		println(x)	&#125;&#125;fu ...
-        
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2021
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2021/11/23/first/" class="archive-title">Golang闭包</a>
+        <p class="archive-date">11-23</p>
       </div>
-      <a class="more" href="/2021/11/23/first/">Read more</a>
-    </article>
-  
-
+    
+  </div>
+</section>
   
 </main>
 
-
+<script>
+  (function () {
+    var url = 'http://example.com/tags/golang/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

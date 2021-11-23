@@ -10,7 +10,7 @@
   
   <title>
     
-      Blacksmith
+      Tags | Blacksmith
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -122,7 +122,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -179,34 +179,45 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>Tags</h2>
+  <p class="post-date">Tag Retrieval</p>
+</div>
+<main class="app-body">
+  <div id="tag-cloud">
+    
+      <a class="tag2" data-name="tag-golang">golang</a>
+    
+  </div>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2021/11/23/first/">Golang闭包</a>
-      </h2>
-      <p class="article-date">November 23, 2021</p>
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-golang">golang</h3>
       
+        <ul class="tag-preview">
+          <li>
+            <a href="/2021/11/23/first/">Golang闭包</a>
+          </li>
+        </ul>
         
-  <a href="/tags#golang" >
-    <span class="tag-code">golang</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          概念闭包是在上下文中引用了自由变量的函数，或者说是函数和其引用的环境的组合体
-实例123456789101112package mainfunc test(x int) func() &#123;	return func() &#123;		println(x)	&#125;&#125;fu ...
-        
-      </div>
-      <a class="more" href="/2021/11/23/first/">Read more</a>
-    </article>
-  
-
-  
+    </div>
+    
 </main>
 
+<script>
+  (function () {
+    var url = 'http://example.com/tags/index.html'
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
 
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top 
+      }, 400)
+    }
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
